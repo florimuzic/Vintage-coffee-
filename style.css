@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+  --dutch-white: rgba(243, 223, 193, 1); /* #F3DFC1*/
+  --deep-champagne: rgba(243, 206, 161, 1); /* #F3CEA1 */
+  --dark-champagne: rgba(250, 193, 124, 1) /* #fac17c */;
+  --black: rgba(59, 59, 59, 1); /* #3B3B3B */
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  color: var(--black);
+  font-family: Kelly Slab;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: rgb(243,223,193);
+  background: radial-gradient(circle, rgba(243,223,193,1) 10%, rgba(243,206,161,1) 80%, rgba(250,193,124,1) 100%);
+  position: relative;
+}
+
+.wrapper {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.05fr 2fr 0.1fr 0.1fr;
+  grid-template-areas: 
+    "title title title"
+    "info info info"
+    "col col col"
+    "footer footer footer"
+    "me me me";
+  grid-gap: 0.3rem;
+}
+
+.title {
+  grid-area: title;
+  position: relative;
+  border-bottom: 2px solid var(--black);
+  padding: 20px 0 20px 0;
+}
+
+.title h1 {
+  font-family: Lobster;
+  font-size: 80px;
+  text-align: center;
+}
+
+.info {
+  grid-area: info;
+  border-bottom: 2px solid var(--black);
+  padding: 0 0 5px 0;
+}
+
+.info p {
+  font-family: Kelly Slab;
+  text-align: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.col-1 {
+  margin: 0 10px 0 0;
+  width: 100%;
+}
+
+.coffee,
+.tea {
+  width: 100%;  
+}
+
+.coffee .header,
+.tea .header {
+  font-size: 40px;
+  font-family: Smythe;
+  letter-spacing: 1px;
+}
+
+.coffee .header {
+  border-top: 2px solid var(--black);
+  border-bottom: 6px double var(--black);
+}
+
+.coffee-image {
+  margin: 10px auto;
+  padding: 20px 0 0 0;
+  width: 60%;
+}
+
+.p1 {
+  width: 100%;
+  text-align: center;
+  padding: 0 0 10px 0;
+  border-bottom: 2px solid var(--black);
+} 
+
+.p1 p,
+.p1 h2 {
+  font-family: Smythe;
+  font-style: italic;
+  font-size: 35px;
+  display: inline-block;
+}
+
+.coffee-list,
+.tea-list {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  align-content: center;
+  padding: 20px 20px 5px 20px;
+}
+
+.coffee-list {
+  border-left: 2px dashed var(--black);
+}
+
+.coffee-name p,
+.tea-name p,
+.tea-name h3,
+.dash,
+.price {
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+.coffee-1,
+.tea-1 {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+  gap: 30px;
+}
+
+.coffee-image-1 {
+  width: 60%;
+}
+
+.p2,
+.p3 {
+  margin: 10px;
+}
+
+.p2 p,
+.p2 h2,
+.p3 h2,
+.p3 p {
+  font-family: Glass Antiqua;
+  margin: auto 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+.col-2 {
+  border-left: 2px solid var(--black);
+  width: 100%;
+  margin: 0 0 0 10px;
+}
+
+.tea .header {
+  border-top: 2px solid var(--black);
+  border-bottom: 6px double var(--black);
+  margin: 0 0 0 10px;
+}
+
+.tea-image {
+  margin: 10px auto;
+  width: 60%;
+}
+
+.tea-list {
+  border-right: 2px dashed var(--black);
+}
+
+.p2,
+.p3 {
+  border: 2px dashed var(--black);
+}
+
+.footer {
+  height: 100%;
+  width: 100%;
+  grid-area: footer;
+  margin: 5px 0 0 0;
+  padding: 10px 0 10px 0;
+  border-top: 2px solid var(--black);
+}
+
+.contact p {
+  padding: 5px 0 5px 0;
+  line-height: 0.9;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mock p {
+  text-align: center;
+  font-style: italic;
+}
+
+@media screen and (max-width: 875px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.02fr 1fr 0.4fr 0.1fr 0.1fr;
+    grid-template-areas:
+      "title"
+      "info"
+      "col-1"
+      "col-2"
+      "footer"
+      "me";
+    width: 85%;
+    height: 100%;
+    padding: 10px 0 10px 0;
+  }
+
+  .title h1 {
+    font-size: 70px;
+  }
+  
+  .col {
+    margin: 0 0;
+  }
+ 
+  .col-2 {
+    border: 0;
+  }
+  
+  .coffee .header,
+  .tea .header {
+    font-size: 30px;
+    padding: 20px 0 0 0;
+  }
+  
+  .coffee .header {
+    border: 0;
+    border-bottom: 6px double var(--black);
+  }
+  
+  .tea .header {
+    border: 0;
+    border-bottom: 6px double var(--black);
+  }
+  
+  .coffee-image,
+  .coffee-image-1,
+  .tea-image {
+    width: 50%;
+  }
+  
+  .coffee-name p,
+  .dash,
+  .price,
+  .tea-name p,
+  .tea-name h3 {
+    font-size: 20px;
+  }
+  
+  .p1 p,
+  .p1 h2,
+  .p2 p,
+  .p2 h2,
+  .p3 p,
+  .p3 h2 {
+    font-size: 40px;
+}
+  
+  .p2,
+  .p3 {
+    padding: 5px;
+  }
+  
+  .footer {
+    
+    padding: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    padding: 5px 0 5px 0;
+  }
+  .title h1 {
+    font-size: 50px;
+  }
+  
+  .coffee .header,
+  .tea .header {
+    font-size: 26px;
+  }
+  
+  .coffee-name p,
+  .dash,
+  .price,
+  .tea-name p,
+  .tea-name h3 {
+    font-size: 16px;
+  }
+
+  .p1 p,
+  .p1 h2,
+  .p2 p,
+  .p2 h2,
+  .p3 p,
+  .p3 h2 {
+    font-size: 24px;
+  }
+  
+  .footer {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+/* MY WEBSITE */
+.me {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  z-index: 100;
+  cursor: pointer;
+}
+
+#myLogo {
+  width: 45px;
+  height: 45px;
+}
